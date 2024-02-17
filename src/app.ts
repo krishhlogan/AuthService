@@ -1,4 +1,4 @@
-import 'reflect-metadata'; // We need this in order to use @Decorators
+import 'reflect-metadata';
 
 import config from './config';
 
@@ -9,12 +9,10 @@ import Logger from './loaders/logger';
 
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
-import utc from 'dayjs/plugin/utc'; // dependent on utc plugin
+import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import relativeTime from 'dayjs/plugin/relativeTime';
-//import RedisInstance from "./spa-shared-be/init/redis"
 
-//import { swaggerDocument } from "./swigger"
 import cors from 'cors';
 
 import loaders from './loaders';
@@ -52,6 +50,4 @@ export default async function startServer() {
   return app;
 }
 
-//RedisInstance.getReadClient();
-//RedisInstance.getWriteClient();
 startServer();

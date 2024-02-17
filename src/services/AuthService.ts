@@ -1,14 +1,27 @@
 // src/services/auth.service.ts
-import { Service } from 'typedi';
-import UserModel, { IUser } from '../models/UserModel';
+import { Inject, Service } from 'typedi';
+import { IUser } from '../models/UserModel';
+import UserService from './UserService';
 
 @Service()
 class AuthService {
   // Implement authentication services
+  constructor(
+    @Inject('logger') private logger,
+    private userService: UserService
+  ){
 
-  public async loginUser(email: string, password: string): Promise<IUser | null> {
-    // Your login logic here
-    return null
+  }
+
+  public async addUser(user: IUser): Promise<IUser> {
+    try {
+      const addedUser = await this.userService.addUser(user);
+      this.logger.info('Added user',addedUser)
+      return addedUser;
+    } catch (error) {
+      console.error('Error during login:', error);
+      throw error;
+    }
   }
 }
 

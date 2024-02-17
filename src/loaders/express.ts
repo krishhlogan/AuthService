@@ -12,6 +12,7 @@ import path from 'path';
 import loggerMiddleware from '../api/middlewares/loggerMiddleware';
 import { IExtendedRequest } from '../interfaces/IExtendedRequest';
 import { isCelebrateError } from 'celebrate';
+import LoggerInstance from './logger';
 
 let loggerMeta = {
   file:
@@ -137,6 +138,7 @@ export default ({ app }: { app: express.Application }) => {
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
     const err = new Error('Not Found');
+    LoggerInstance.error("req url",req.url)
     err['status'] = 404;
     next(err);
   });

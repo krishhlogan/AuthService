@@ -2,8 +2,6 @@ import mongoose, { ConnectOptions } from 'mongoose';
 import { Db } from 'mongodb';
 import config from '../config';
 import Logger from './logger';
-import { Container } from 'typedi';
-import { UserModel } from '../models';
 
 export default async (): Promise<Db> => {
   let connection;
