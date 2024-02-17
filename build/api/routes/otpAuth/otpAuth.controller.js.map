@@ -1,0 +1,1 @@
+{"version":3,"file":"otpAuth.controller.js","sourceRoot":"","sources":["../../../../src/api/routes/otpAuth/otpAuth.controller.ts"],"names":[],"mappings":";;AAQA,MAAM,iBAAiB,GAAG;IACxB,SAAS,EAAE,KAAK,EAAE,GAAqB,EAAE,GAAa,EAAE,IAAkB,EAAE,EAAE;QAC5E,8BAA8B;IAChC,CAAC;CACF,CAAC;AAEF,kBAAe,iBAAiB,CAAC"}

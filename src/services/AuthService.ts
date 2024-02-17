@@ -13,7 +13,7 @@ class AuthService {
 
   }
 
-  public async addUser(user: IUser): Promise<IUser> {
+  public async addEmailAuthUser(user: IUser): Promise<IUser> {
     try {
       const addedUser = await this.userService.addUser(user);
       this.logger.info('Added user',addedUser)

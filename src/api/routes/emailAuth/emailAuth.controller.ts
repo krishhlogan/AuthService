@@ -6,15 +6,7 @@ import { IUser } from '../../../models/UserModel';
 import AuthService from '../../../services/AuthService';
 import { APIResponse } from '../../../utility';
 
-const AuthController = {
-  googleSignIn: async (req: IExtendedRequest, res: Response, next: NextFunction) => {
-    // Implement Google Sign-in logic
-  },
-
-  otpSignIn: async (req: IExtendedRequest, res: Response, next: NextFunction) => {
-    // Implement OTP Sign-in logic
-  },
-
+const EmailAuthController = {
   emailPasswordSignIn: async (req: IExtendedRequest, res: Response,  next: NextFunction) => {
     // Implement Email/Password Sign-in logic
   },
@@ -23,7 +15,7 @@ const AuthController = {
       LoggerInstance.info('starting addEmailUser')
       const user = req.body as IUser;
       const authService = Container.get(AuthService);
-      const createdUser = await authService.addUser(user);
+      const createdUser = await authService.addEmailAuthUser(user);
       return APIResponse.success(req, res, 'Successfully added user',{user: createdUser})
     }catch(err){
       LoggerInstance.error('Exception in adding email user',err)
@@ -32,4 +24,4 @@ const AuthController = {
   }
 };
 
-export default AuthController;
+export default EmailAuthController;

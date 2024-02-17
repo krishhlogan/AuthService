@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../src/api/routes/otpAuth/index.ts"],"names":[],"mappings":";;;;;AAEA,qCAA0C;AAC1C,8EAAqD;AAGrD,MAAM,MAAM,GAAG,IAAA,gBAAM,GAAE,CAAC;AACxB,kBAAe,CAAC,GAAW,EAAE,EAAE;IAC3B,GAAG,CAAC,GAAG,CAAC,WAAW,EAAC,MAAM,CAAC,CAAC;IAE5B,MAAM,CAAC,IAAI,CAAC,SAAS,EAAE,4BAAiB,CAAC,SAAS,CAAC,CAAC;AAExD,CAAC,CAAA"}

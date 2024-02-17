@@ -11,35 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-// src/services/auth.service.ts
+const mongoose_1 = require("mongoose");
 const typedi_1 = require("typedi");
-const UserService_1 = __importDefault(require("./UserService"));
-let AuthService = class AuthService {
-    // Implement authentication services
-    constructor(logger, userService) {
+let UserService = class UserService {
+    constructor(logger, userModel) {
         this.logger = logger;
-        this.userService = userService;
+        this.userModel = userModel;
     }
-    async addEmailAuthUser(user) {
+    async addUser(user) {
         try {
-            const addedUser = await this.userService.addUser(user);
-            this.logger.info('Added user', addedUser);
-            return addedUser;
+            const createdData = await this.userModel.create(user);
+            this.logger.info('CreatedData %o', createdData);
+            return createdData;
         }
-        catch (error) {
-            console.error('Error during login:', error);
-            throw error;
+        catch (err) {
+            this.logger.error('Exceptoin while creating user', err);
+            throw err;
         }
+    }
+    async getUserByEmail(email) {
+    }
+    async markUserInactive(email) {
     }
 };
-AuthService = __decorate([
+UserService = __decorate([
     (0, typedi_1.Service)(),
     __param(0, (0, typedi_1.Inject)('logger')),
-    __metadata("design:paramtypes", [Object, UserService_1.default])
-], AuthService);
-exports.default = AuthService;
-//# sourceMappingURL=AuthService.js.map
+    __param(1, (0, typedi_1.Inject)('userModel')),
+    __metadata("design:paramtypes", [Object, mongoose_1.Model])
+], UserService);
+exports.default = UserService;
+//# sourceMappingURL=UserService.js.map

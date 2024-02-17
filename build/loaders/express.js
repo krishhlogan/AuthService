@@ -14,6 +14,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const path_1 = __importDefault(require("path"));
 const loggerMiddleware_1 = __importDefault(require("../api/middlewares/loggerMiddleware"));
 const celebrate_1 = require("celebrate");
+const logger_2 = __importDefault(require("./logger"));
 let loggerMeta = {
     file: __dirname
         .toString()
@@ -119,6 +120,7 @@ exports.default = ({ app }) => {
     /// catch 404 and forward to error handler
     app.use((req, res, next) => {
         const err = new Error('Not Found');
+        logger_2.default.error("req url", req.url);
         err['status'] = 404;
         next(err);
     });

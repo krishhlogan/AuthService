@@ -1,9 +1,12 @@
 import { Router } from 'express';
-import auth from './routes/auth';
-
+import emailAuth from './routes/emailAuth';
+import otpAuth from './routes/otpAuth';
+import googleAuth from './routes/googleAuth';
 
 export default () => {
     const app = Router();
-    auth(app);
+    emailAuth(app);
+    otpAuth(app);
+    googleAuth(app);
     return app;
 }

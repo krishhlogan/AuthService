@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../src/api/routes/googleAuth/index.ts"],"names":[],"mappings":";;;;;AAEA,qCAA0C;AAC1C,oFAA2D;AAG3D,MAAM,MAAM,GAAG,IAAA,gBAAM,GAAE,CAAC;AACxB,kBAAe,CAAC,GAAW,EAAE,EAAE;IAC3B,GAAG,CAAC,GAAG,CAAC,cAAc,EAAC,MAAM,CAAC,CAAC;IAE/B,MAAM,CAAC,IAAI,CAAC,SAAS,EAAE,+BAAoB,CAAC,YAAY,CAAC,CAAC;AAE9D,CAAC,CAAA"}
